@@ -11,4 +11,9 @@
     <PackageReference Include="FluentValidation" Version="12.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IFSPStore.Domain\IFSPStore.Domain.csproj" />
+    <ProjectReference Include="..\IFSPStore.Repository\IFSPStore.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
