@@ -36,7 +36,6 @@
             cityToolStripMenuItem = new ToolStripMenuItem();
             customerToolStripMenuItem = new ToolStripMenuItem();
             saleToolStripMenuItem = new ToolStripMenuItem();
-            registerToolStripMenuItem = new ToolStripMenuItem();
             relatóriosToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             loseToolStripMenuItem = new ToolStripMenuItem();
@@ -55,7 +54,7 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { userToolStripMenuItem, categoryToolStripMenuItem, productToolStripMenuItem, cityToolStripMenuItem, customerToolStripMenuItem, saleToolStripMenuItem, registerToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { userToolStripMenuItem, categoryToolStripMenuItem, productToolStripMenuItem, cityToolStripMenuItem, customerToolStripMenuItem, saleToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(77, 24);
             cadastrosToolStripMenuItem.Text = "Register";
@@ -93,18 +92,13 @@
             customerToolStripMenuItem.Name = "customerToolStripMenuItem";
             customerToolStripMenuItem.Size = new Size(224, 26);
             customerToolStripMenuItem.Text = "Customer";
+            customerToolStripMenuItem.Click += customerToolStripMenuItem_Click;
             // 
             // saleToolStripMenuItem
             // 
             saleToolStripMenuItem.Name = "saleToolStripMenuItem";
             saleToolStripMenuItem.Size = new Size(224, 26);
             saleToolStripMenuItem.Text = "Sale";
-            // 
-            // registerToolStripMenuItem
-            // 
-            registerToolStripMenuItem.Name = "registerToolStripMenuItem";
-            registerToolStripMenuItem.Size = new Size(224, 26);
-            registerToolStripMenuItem.Text = "Register";
             // 
             // relatóriosToolStripMenuItem
             // 
@@ -155,6 +149,5 @@
         private ToolStripMenuItem relatóriosToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem loseToolStripMenuItem;
-        private ToolStripMenuItem registerToolStripMenuItem;
     }
 }

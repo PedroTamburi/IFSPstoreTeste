@@ -52,11 +52,11 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(465, 13);
+            btnSave.Location = new Point(434, 13);
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(380, 13);
+            btnCancel.Location = new Point(349, 13);
             // 
             // tabControlRegister
             // 
@@ -173,6 +173,7 @@
             ClientSize = new Size(572, 413);
             Location = new Point(0, 0);
             Name = "CityForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CityForm";
             tabPageRegister.ResumeLayout(false);
             tabControlRegister.ResumeLayout(false);

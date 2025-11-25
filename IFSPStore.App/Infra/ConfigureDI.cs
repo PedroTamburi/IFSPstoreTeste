@@ -53,9 +53,14 @@ internal static class ConfigureDI
             config.CreateMap<User, UserModel>();
             config.CreateMap<Category, CategoryModel>();
             config.CreateMap<City, CityModel>()
-                .ForMember(cm => cm.NameState, c => c.MapFrom(x => $"{x.Name}/{x.State}"));
+                .ConstructUsing(src => new CityModel(
+                    src.Id,
+                    src.Name,
+                    src.State,
+                    $"{src.Name}/{src.State}"
+                ));
             config.CreateMap<Customer, CustomerModel>()
-                .ForMember(cm => cm.City, c => c.MapFrom(x => $"{x.City.Name}/{x.City!.State}"))
+                .ForMember(cm => cm.City, c => c.MapFrom(x => $"{x.City.Name}/{x.City.State}"))
                 .ForMember(cm => cm.CityId, c => c.MapFrom(x => x.City.Id));
             config.CreateMap<Product, ProductModel>()
                 .ForMember(pm => pm.Group, p => p.MapFrom(x => $"{x.Group.Name}"))
@@ -76,6 +81,7 @@ internal static class ConfigureDI
         services.AddTransient<UserForm>();
         services.AddTransient<CityForm>();
         services.AddTransient<ProductForm>();
+        services.AddTransient<CustomerForm>();
         #endregion
 
         serviceProvider = services.BuildServiceProvider();
