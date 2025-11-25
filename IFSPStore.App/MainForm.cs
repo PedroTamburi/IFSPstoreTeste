@@ -35,6 +35,11 @@ namespace IFSPStore.App
             ShowForm<CityForm>();
         }
 
+        private void productToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowForm<ProductForm>();
+        }
+
         private void ShowForm<TFormulario>() where TFormulario : Form
         {
             var cad = ConfigureDI.serviceProvider.GetService<TFormulario>();

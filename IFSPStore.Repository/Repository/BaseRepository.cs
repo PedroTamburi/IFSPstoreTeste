@@ -45,7 +45,7 @@ public class BaseRepository<TEntity>(IFSPStoreDbContext context)
                 baseQuery = baseQuery.Include(include);
             }
         }
-        return baseQuery.ToList();
+        return baseQuery.AsNoTracking().ToList();
     }
 
     public TEntity Select(object id, IList<string>? includes = null)
@@ -59,7 +59,7 @@ public class BaseRepository<TEntity>(IFSPStoreDbContext context)
                 baseQuery = baseQuery.Include(include);
             }
         }
-        return baseQuery.ToList().Find(e => e.Id == (int)id);
+        return baseQuery.AsNoTracking().FirstOrDefault(e => e.Id == (int)id);
     }
 
     public void Update(TEntity entity)
