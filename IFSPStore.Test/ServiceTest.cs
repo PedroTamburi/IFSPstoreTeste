@@ -1,4 +1,5 @@
-﻿using IFSPStore.Domain.Base;
+﻿using AutoMapper;
+using IFSPStore.Domain.Base;
 using IFSPStore.Domain.Entities;
 using IFSPStore.Repository.Context;
 using IFSPStore.Repository.Repository;
@@ -10,12 +11,12 @@ using System.Text.Json;
 namespace IFSPStore.Test;
 
 [TestClass]
-public class ServiceTest
-{
+    public class ServiceTest
+    {
     private ServiceCollection _services;
 
     public ServiceProvider ConfigureService()
-    {
+        {
         _services = new ServiceCollection();
 
         _services.AddDbContext<IFSPStoreDbContext>();
@@ -29,11 +30,11 @@ public class ServiceTest
 
 
         return _services.BuildServiceProvider();
-    }
+        }
 
-    [TestMethod]
+        [TestMethod]
     public void TesteUserService()
-    {
+            {
         var serviceProvider = ConfigureService();
         var _userService = serviceProvider.GetService<IBaseService<User>>();
 
@@ -49,8 +50,9 @@ public class ServiceTest
         );
 
         
-        var result = _userService.Add<User, User, UserValidator>(user);
+            var result = _userService.Add<User, User, UserValidator>(user);
 
-        Console.WriteLine(JsonSerializer.Serialize(result));
+            Console.WriteLine(JsonSerializer.Serialize(result));
+        }
     }
 }
